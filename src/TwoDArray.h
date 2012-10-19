@@ -1,6 +1,7 @@
 #ifndef __TWODARRAY_H__
 #define __TWODARRAY_H__
 
+
 #include "Node.h"
 
 template <typename T>
@@ -15,7 +16,7 @@ class TwoDArray {
   ~TwoDArray<T>();
   T access(int r, int c);
   void print();
-  void insert(int r, int c, int def);
+  void insert(int r, int c,T def);
   void remove(int r, int c);
   int getNumRows();
   int getNumCols();

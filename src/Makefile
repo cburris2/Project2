@@ -1,8 +1,8 @@
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror
 
-TwoDArray:TwoDArray.cpp Node.o 
-	$(CPP) $(CFLAGS) -o arraytest $^
+TwoDArray.o:TwoDArray.cpp Node.o 
+	$(CPP) $(CFLAGS) -o TwoDArray $^
 
 test: node_test.cpp Node.o LinkedList.o
 	$(CPP) $(CFLAGS) -o test $^

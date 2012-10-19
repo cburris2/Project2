@@ -1,57 +1,58 @@
-#include <Node.h>
-#include <TwoDArray.h>
+#include "Node.h"
+#include "TwoDArray.h"
 #include <iostream>
 #include <string>
 
 
-<template typename T>
-TwoDArray(int r, int c, int def){
- r = 10;
- c = 10;
- def = 0;
- int** array = new int*[r][c];
+template <typename T>
+TwoDArray<T>::TwoDArray(int r, int c,int def){
+
+ //int** array = new int*[r][c];
+int** array = new int*[r];
  	for (int i =0; i< 10; i++){
-	  array[i] = new int[10]; 
+	  array[i] = new int[c]; 
 	 
 	}
-
+//array.fill(def);
 
 }
 
-<template typename T>
-~TwoDArray(){};
+template <typename T>
+~TwoDArray<T>::TwoDArray() {
+	delete[] array;
+}
 
 
-<template typename T> 
-void insert(int r, int c, T value){
-  asser(!array.empty());
-  int k = getNumRows();
-  int x = getNumCols();
+template <typename T> 
+void TwoDArray<T>::insert(int r, int c, T value){
+  //assert(!array.empty());
+  int* k = getNumRows();
+  int* x = getNumCols();
     array[k+1][x+1] = value;	
     
 } 
 
-<template typename T>
+template <typename T>
 T access(int r, int c){
-
-
-}
-
-<template typename T>
-void remove (int r, int c){
-
+  std::cout << array.at(r,c); << std::endl;
 
 }
 
-<template typename T>
-int getNumRows() {
+template <typename T>
+void TwoDArray<T>::remove (int r, int c){
+  
 
+}
+
+template <typename T>
+int TwoDArray<T>::getNumRows() {
+  	
   return 0;
 
 }
 
 <template typename T>
-int getNumCols(){
+int TwoDArray<T>::getNumCols(){
 
   return 0;
 }
