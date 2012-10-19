@@ -1,0 +1,4 @@
+*.o
+LinkedList.cpp
+LinkedList.h
+
