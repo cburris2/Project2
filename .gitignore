@@ -1,4 +1,4 @@
 *.o
-LinkedList.cpp
-LinkedList.h
+/src/LinkedList.cpp
+/src/LinkedList.h
 
