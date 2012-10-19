@@ -15,5 +15,5 @@ Node.o: Node.h Node.cpp
 
 clean:
 	rm -f *.o;
-	rm -f test; rm -f ltest;
+
 	rm -f *~;
