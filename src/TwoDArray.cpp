@@ -1,60 +1,79 @@
-#include "Node.h"
 #include "TwoDArray.h"
 #include <iostream>
 #include <string>
 
 
 template <typename T>
-TwoDArray<T>::TwoDArray(int r, int c,int def){
-
- //int** array = new int*[r][c];
-int** array = new int*[r];
- 	for (int i =0; i< 10; i++){
-	  array[i] = new int[c]; 
+TwoDArray<T>::TwoDArray(int r, int c,T def){
+	numRows = r;
+	numColumns = c;
+	
+	int** theArray = new int*[r];
+	for (int i =0; i<numColumns; i++){
+		theArray[i] = new int[c]; 
 	 
 	}
-//array.fill(def);
+
 
 }
 
 template <typename T>
-~TwoDArray<T>::TwoDArray() {
-	delete[] array;
+TwoDArray<T>::~TwoDArray() {
+
+
+	for (int i =0; i< numRows; i++) { 
+	 	delete[] theArray[i];
+	//for loop to delete row array & col array
+
+
+	}
 }
 
 
 template <typename T> 
 void TwoDArray<T>::insert(int r, int c, T value){
-  //assert(!array.empty());
-  int* k = getNumRows();
-  int* x = getNumCols();
-    array[k+1][x+1] = value;	
+
+   	int val=0;
+	// assert that the row and col are in range. 
+  
+  
+	val = theArray[r][c];	
     
 } 
 
 template <typename T>
-T access(int r, int c){
-  std::cout << array.at(r,c); << std::endl;
+T TwoDArray<T>::access(int r, int c){
 
+	int* aValue = theArray[r][c];
+
+	
+	return aValue;
 }
 
 template <typename T>
 void TwoDArray<T>::remove (int r, int c){
-  
+
+	
+	assert(r >= 0 && r <= numRows-1);
+
+	//delete theArray[r][c];
+
+
+}
+
+
+
+template <typename T>
+int TwoDArray<T>::getNumRows() {
+
+  return numRows;
 
 }
 
 template <typename T>
-int TwoDArray<T>::getNumRows() {
-  	
-  return 0;
-
-}
-
-<template typename T>
 int TwoDArray<T>::getNumCols(){
 
-  return 0;
+  return numColumns;
 }
 
 

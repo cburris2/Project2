@@ -2,7 +2,7 @@ CPP = g++
 CFLAGS = -Wall -Wextra -Werror
 
 TwoDArray.o:TwoDArray.cpp Node.o 
-	$(CPP) $(CFLAGS) -o TwoDArray $^
+	$(CPP) $(CFLAGS) -c TwoDArray.cpp 
 
 test: node_test.cpp Node.o LinkedList.o
 	$(CPP) $(CFLAGS) -o test $^

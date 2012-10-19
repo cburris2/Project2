@@ -2,15 +2,13 @@
 #define __TWODARRAY_H__
 
 
-#include "Node.h"
-
 template <typename T>
 class TwoDArray {
- private:
-  Node<T>* row;
-  Node<T>* col;
-
-
+ private:  
+  T numRows;
+  T numColumns;
+  T** theArray;
+  
  public:
   TwoDArray<T>(int r, int c, T def);
   ~TwoDArray<T>();
