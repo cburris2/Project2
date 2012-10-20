@@ -1,7 +1,7 @@
 #include "TwoDArray.h"
 #include <iostream>
 #include <string>
-
+	
 
 template <typename T>
 TwoDArray<T>::TwoDArray(int r, int c,T def){
@@ -33,11 +33,10 @@ TwoDArray<T>::~TwoDArray() {
 template <typename T> 
 void TwoDArray<T>::insert(int r, int c, T value){
 
-   	int val=0;
+	 int val=0;
 	// assert that the row and col are in range. 
-  
-  
-	val = theArray[r][c];	
+    
+	 val = theArray[r][c];	
     
 } 
 
