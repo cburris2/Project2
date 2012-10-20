@@ -8,6 +8,7 @@ class TwoDArray {
   T numRows;
   T numColumns;
   T** theArray;
+  T defValue;
   
  public:
   TwoDArray<T>(int r, int c, T def);

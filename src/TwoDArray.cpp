@@ -7,7 +7,7 @@ template <typename T>
 TwoDArray<T>::TwoDArray(int r, int c,T def){
 	numRows = r;
 	numColumns = c;
-	
+      defValue = def;	
 	int** theArray = new int*[r];
 	for (int i =0; i<numColumns; i++){
 		theArray[i] = new int[c]; 
@@ -50,7 +50,7 @@ T TwoDArray<T>::access(int r, int c){
 }
 
 template <typename T>
-void TwoDArray<T>::remove (int r, int c){
+void TwoDArray<T>::remove(int r, int c){
 
 	
 	assert(r >= 0 && r <= numRows-1);
