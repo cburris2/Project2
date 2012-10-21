@@ -39,8 +39,8 @@ template <typename T>
 void TwoDArray<T>::insert(int r, int c, T value){
       int** inValue = &value; 
       **inValue = &value;
-      assert(r >= 0 && r <= numRows-1);// assert that the row is in range. 
-	assert(c >= 0 && c <= numColumns-1);//assert that the col is in range.
+      assert(r >= 0 && r <= numRows-1);//assert that r is in range. 
+	assert(c >= 0 && c <= numColumns-1);//assert that c is in range.
        
 	theArray[r][c].value=inValue;
       std::cout << theArray.print() <<std::endl;	
@@ -59,7 +59,7 @@ void TwoDArray<T>::remove(int r, int c){
       assert(r >= 0 && r <= numRows-1);
 	  /* <remove needs to replace the value at the r & c> */
 	assert(c >= 0 && c <= numColumns-1);
-	//delete theArray[r][c];
+	
      for (int i = 0; i<=numRows-1; i++){
 	   theArray[i] = theArray[defValue]; 
      }
