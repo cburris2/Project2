@@ -58,11 +58,11 @@ void TwoDArray<T>::remove(int r, int c){
 	
       assert(r >= 0 && r <= numRows-1);
 	  /* <remove needs to replace the value at the r & c> */
-	assert(c >= 0 && c <= numColumns-1);
+      assert(c >= 0 && c <= numColumns-1);
 	
-     for (int i = 0; i<=numRows-1; i++){
+      for (int i=0; i<=numRows-1; i++) {
 	   theArray[i] = theArray[defValue]; 
-     }
+      }
 
 }
 
@@ -71,8 +71,8 @@ template <typename T>
 void TwoDArray<T>::print() {
       //int cur = 0;
 	std::cout << "[";
-	for(int i=0; i<numRows; i++) {
-	std::cout << theArray[i][i]; //.value 
+	for (int i=0; i<numRows; i++) {
+		std::cout << theArray[i][i]; //.value 
       
       }
       std::cout << "]" << std::endl;
