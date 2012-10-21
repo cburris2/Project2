@@ -38,12 +38,11 @@ TwoDArray<T>::~TwoDArray() {
 template <typename T> 
 void TwoDArray<T>::insert(int r, int c, T value){
       int** inValue = &value; 
-      //**inValue = &value;
-      assert(r >= 0 && r <= numRows-1);
-	// assert that the row and col are in range. 
-	assert(c >= 0 && c <= numColumns-1);
+      **inValue = &value;
+      assert(r >= 0 && r <= numRows-1);// assert that the row is in range. 
+	assert(c >= 0 && c <= numColumns-1);//assert that the col is in range.
        
-	//theArray[r][c].value=iinValue;
+	theArray[r][c].value=inValue;
       std::cout << theArray.print() <<std::endl;	
       //val = theArray[r][c];	
 	//theArray[r][c]->value;
