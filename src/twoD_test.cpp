@@ -1,11 +1,19 @@
 #include <iostream>
 #include "TwoDArray.h"
 
+
 int main(){
-
-    TwoDArray<int>* ta = new TwoDArray<int>(2,2,8);
-
+    
+    std::cout << "inside main---" << std::endl;
+    TwoDArray<int>* ta = new TwoDArray<int>(2,2,0);
+    std::cout <<"\n" << "created array---" << std::endl;
     ta->insert(0,0,3); 
 
+   // std::cout << "\n" << ta->insert(0,0,3) << std::endl;
+
+
+
 return 0;
+
+
 }

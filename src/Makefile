@@ -5,7 +5,7 @@ twoDtest: twoD_test.cpp TwoDArray.o
 	  $(CPP) $(CFLAGS) -o twoDtest $^ 
 
 twoD_test.o: TwoDArray.h TwoDArray.cpp TwoDArray.o
-	$(CPP) $(CFLAGS) -c twoD_test.cpp
+	  	$(CPP) $(CFLAGS) -c twoD_test.cpp
 	
 test: node_test.cpp Node.o LinkedList.o
 	$(CPP) $(CFLAGS) -o test $^

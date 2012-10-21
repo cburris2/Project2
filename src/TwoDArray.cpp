@@ -1,6 +1,7 @@
 #include "TwoDArray.h"
 #include <iostream>
 #include <string>
+#include <assert.h>
 	
 
 template <typename T>
@@ -8,7 +9,9 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 	numRows = r;
 	numColumns = c;
       defValue = def;	
+      std::cout << "in constructor---" <<std::endl;	
 	int** theArray = new int*[r];
+	
 	for (int i =0; i<numColumns; i++){
 		theArray[i] = new int[c]; 
 	 
@@ -16,6 +19,7 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 
 
 }
+
 
 template <typename T>
 TwoDArray<T>::~TwoDArray() {
@@ -27,52 +31,74 @@ TwoDArray<T>::~TwoDArray() {
 
 
 	}
+	delete[] theArray;
 }
 
 
 template <typename T> 
 void TwoDArray<T>::insert(int r, int c, T value){
-
-	 int val=0;
+      int** inValue = &value; 
+      //**inValue = &value;
+      assert(r >= 0 && r <= numRows-1);
 	// assert that the row and col are in range. 
-    
-	 val = theArray[r][c];	
-    
+	assert(c >= 0 && c <= numColumns-1);
+       
+	//theArray[r][c].value=iinValue;
+      std::cout << theArray.print() <<std::endl;	
+      //val = theArray[r][c];	
+	//theArray[r][c]->value;
+	
+      std::cout << "after v's set---" <<std::endl;	
+
 } 
 
-template <typename T>
-T TwoDArray<T>::access(int r, int c){
-
-	int* aValue = theArray[r][c];
-
-	
-	return aValue;
-}
 
 template <typename T>
 void TwoDArray<T>::remove(int r, int c){
 
 	
-	assert(r >= 0 && r <= numRows-1);
-
+      assert(r >= 0 && r <= numRows-1);
+	  /* <remove needs to replace the value at the r & c> */
+	assert(c >= 0 && c <= numColumns-1);
 	//delete theArray[r][c];
-
+     for (int i = 0; i<=numRows-1; i++){
+	   theArray[i] = theArray[defValue]; 
+     }
 
 }
 
 
+template <typename T>
+void TwoDArray<T>::print() {
+      //int cur = 0;
+	std::cout << "[";
+	for(int i=0; i<numRows; i++) {
+	std::cout << theArray[i][i]; //.value 
+      
+      }
+      std::cout << "]" << std::endl;
+}
+
+template <typename T>
+T TwoDArray<T>::access(int r, int c){
+
+	int aValue = r + c; //theArray[r][c].value;
+
+	
+	return aValue;  //**aValue;
+}
 
 template <typename T>
 int TwoDArray<T>::getNumRows() {
 
-  return numRows;
+      return numRows;
 
 }
 
 template <typename T>
 int TwoDArray<T>::getNumCols(){
 
-  return numColumns;
+      return numColumns;
 }
 
-
+template class TwoDArray<int>;
