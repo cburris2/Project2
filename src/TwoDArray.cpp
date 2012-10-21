@@ -16,7 +16,16 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 		theArray[i] = new int[c]; 
 	 
 	}
+      for (int i=0; i<numRows; i++) {
+	  for (int i=0; i<numColumns;i++){
 
+		theArray[i][i] = defValue;
+
+	  }
+
+	}
+
+	//theArray.print();  
 
 }
 
@@ -37,16 +46,15 @@ TwoDArray<T>::~TwoDArray() {
 
 template <typename T> 
 void TwoDArray<T>::insert(int r, int c, T value){
-      int** inValue = &value; 
-      **inValue = &value;
+      //T* inValue=value; 
+      //(*inValue)=value;
       assert(r >= 0 && r <= numRows-1);//assert that r is in range. 
 	assert(c >= 0 && c <= numColumns-1);//assert that c is in range.
        
-	theArray[r][c].value=inValue;
-      std::cout << theArray.print() <<std::endl;	
-      //val = theArray[r][c];	
-	//theArray[r][c]->value;
-	
+	//inValue->theArray[r][c];
+     // std::cout << theArray.print() <<std::endl;	
+      theArray[r][c]=value;	
+		
       std::cout << "after v's set---" <<std::endl;	
 
 } 
@@ -72,8 +80,8 @@ void TwoDArray<T>::print() {
       //int cur = 0;
 	std::cout << "[";
 	for (int i=0; i<numRows; i++) {
-		std::cout << theArray[i][i]; //.value 
-      
+		std::cout << theArray;  
+
       }
       std::cout << "]" << std::endl;
 }
@@ -81,10 +89,10 @@ void TwoDArray<T>::print() {
 template <typename T>
 T TwoDArray<T>::access(int r, int c){
 
-	int aValue = r + c; //theArray[r][c].value;
+	int aValue=theArray[r][c];
 
-	
-	return aValue;  //**aValue;
+
+	return aValue; 
 }
 
 template <typename T>
