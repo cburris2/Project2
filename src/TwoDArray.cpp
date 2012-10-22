@@ -10,14 +10,15 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 	numColumns = c;
       defValue = def;	
       std::cout << "in constructor---" <<std::endl;	
-	int** theArray = new int*[r];
+	theArray = new int*[r];
 	
 	for (int i =0; i<numColumns; i++){
 		theArray[i] = new int[c]; 
 	 
 	}
+
       for (int i=0; i<numRows; i++) {
-	  for (int i=0; i<numColumns;i++){
+	  for (int j=numColumns; j>=0; j--){
 
 		theArray[i][i] = defValue;
 
@@ -25,7 +26,7 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 
 	}
 
-	//theArray.print();  
+	  
 
 }
 
@@ -55,7 +56,7 @@ void TwoDArray<T>::insert(int r, int c, T value){
      // std::cout << theArray.print() <<std::endl;	
       theArray[r][c]=value;	
 		
-      std::cout << "after v's set---" <<std::endl;	
+      std::cout << "after insert---" <<std::endl;	
 
 } 
 
@@ -80,8 +81,10 @@ void TwoDArray<T>::print() {
       //int cur = 0;
 	std::cout << "[";
 	for (int i=0; i<numRows; i++) {
-		std::cout << theArray;  
+	  for(int j=numColumns; j>=0; j--){
 
+		std::cout << theArray;  
+	  }
       }
       std::cout << "]" << std::endl;
 }
