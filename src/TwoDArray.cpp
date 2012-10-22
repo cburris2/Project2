@@ -10,17 +10,18 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 	numColumns = c;
       defValue = def;	
       std::cout << "in constructor---" <<std::endl;	
-	theArray = new int*[r];
+	theArray = new T*[r];
 	
-	for (int i =0; i<numColumns; i++){
-		theArray[i] = new int[c]; 
+	for (int i=0; i<numColumns; i++){
+		theArray[i] = new T[c]; 
 	 
 	}
 
-      for (int i=0; i<numRows; i++) {
-	  for (int j=numColumns; j>=0; j--){
+      for (int i=0; i<=numRows-1; i++) {
+	  for (int j=numColumns-1; j>=0; j--){
 
-		theArray[i][i] = defValue;
+		theArray[i][j] = defValue;
+
 
 	  }
 
@@ -69,9 +70,9 @@ void TwoDArray<T>::remove(int r, int c){
 	  /* <remove needs to replace the value at the r & c> */
       assert(c >= 0 && c <= numColumns-1);
 	
-      for (int i=0; i<=numRows-1; i++) {
-	   theArray[i] = theArray[defValue]; 
-      }
+     // for (int i=0; i<=numRows-1; i++) {
+	  theArray[r][c] = defValue; 
+      //}
 
 }
 
@@ -80,10 +81,12 @@ template <typename T>
 void TwoDArray<T>::print() {
       //int cur = 0;
 	std::cout << "[";
-	for (int i=0; i<numRows; i++) {
-	  for(int j=numColumns; j>=0; j--){
+	std::cout << " ";
+	for (int i=0; i<=numRows-1; i++) {
+	  for(int j=numColumns-1; j>=0; j--){
 
-		std::cout << theArray;  
+		std::cout << theArray[i][j]; 
+		std::cout << " ";
 	  }
       }
       std::cout << "]" << std::endl;
@@ -92,10 +95,9 @@ void TwoDArray<T>::print() {
 template <typename T>
 T TwoDArray<T>::access(int r, int c){
 
-	int aValue=theArray[r][c];
-
-
-	return aValue; 
+	  //T aValue=theArray[r][c];
+      
+	return theArray[r][c]; 
 }
 
 template <typename T>
@@ -112,3 +114,5 @@ int TwoDArray<T>::getNumCols(){
 }
 
 template class TwoDArray<int>;
+template class TwoDArray<double>;
+template class TwoDArray<std::string>;

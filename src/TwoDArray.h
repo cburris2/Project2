@@ -5,8 +5,8 @@
 template <typename T>
 class TwoDArray {
  private:  
-  T numRows;
-  T numColumns;
+  int numRows;
+  int numColumns;
   T** theArray;
   T defValue;
   
