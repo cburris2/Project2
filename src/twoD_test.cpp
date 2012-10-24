@@ -22,7 +22,7 @@ int main(){
     ta->print();
     ta->remove(0,0);
     ta->print();
-    //std::cout << "\n" << ta->insert(0,0,3) << std::endl;
+    std::cout << "\n" << ta->access(0,3) << std::endl;
     std::cout << ta->getNumRows() << std::endl;
     std::cout << ta->getNumCols() << std::endl;
     

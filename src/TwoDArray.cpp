@@ -9,8 +9,8 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 	numRows = r;
 	numColumns = c;
       defValue = def;	
-      std::cout << "in constructor---" <<std::endl;	
-	theArray = new T*[r];
+     // std::cout << "in constructor---" <<std::endl;	
+      theArray = new T*[r];
 	
 	for (int i=0; i<numColumns; i++){
 		theArray[i] = new T[c]; 
@@ -27,7 +27,6 @@ TwoDArray<T>::TwoDArray(int r, int c,T def){
 
 	}
 
-	  
 
 }
 
@@ -57,7 +56,7 @@ void TwoDArray<T>::insert(int r, int c, T value){
      // std::cout << theArray.print() <<std::endl;	
       theArray[r][c]=value;	
 		
-      std::cout << "after insert---" <<std::endl;	
+      //std::cout << "after insert---" <<std::endl;	
 
 } 
 
@@ -85,7 +84,7 @@ void TwoDArray<T>::print() {
 	for (int i=0; i<=numRows-1; i++) {
 	  for(int j=numColumns-1; j>=0; j--){
 
-		std::cout << theArray[i][j]; 
+    		std::cout << theArray[i][j]; 
 		std::cout << " ";
 	  }
       }

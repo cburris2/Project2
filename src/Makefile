@@ -5,10 +5,10 @@ twoDtest: twoD_test.cpp TwoDArray.o
 	  $(CPP) $(CFLAGS) -o twoDtest $^ 
 
 twoD_test.o: TwoDArray.h TwoDArray.cpp TwoDArray.o
-	  	$(CPP) $(CFLAGS) -c twoD_test.cpp
+	  	$(CPP) $(CFLAGS) -c twoD_test.cpp  
 	
-test: node_test.cpp Node.o LinkedList.o
-	$(CPP) $(CFLAGS) -o test $^
+Vectors.o: Vectors.h Vectors.cpp
+	  $(CPP) $(CFLAGS) -c Vectors.cpp
 
 TwoDArray.o: TwoDArray.h TwoDArray.cpp
 	$(CPP) $(CFLAGS) -c TwoDArray.cpp
@@ -20,4 +20,6 @@ Node.o: Node.h Node.cpp
 	$(CPP) $(CFLAGS) -c Node.cpp
 
 clean:
-	rm -f *.o; rm -f *~;
+	rm -f *.o;
+	rm -f twoDtest;
+	rm -f *~;

@@ -1,19 +1,21 @@
 #ifndef __VECTORS_H__
 #define __VECTORS_H__
 
+#include <vector>
 
 template <typename T>
 class Vectors {
-    private:
+   private:
      T numRows;
-     T numColumns;
-     T** theVector;
+     T numC;
+    // std::vector<T> row;
+     //std::vector < std::vector<T> > theMatrix; // can be pointer
      T defValue;
 
-    public:
+   public:
      Vectors<T>(int r, int c, T def);
      ~Vectors<T>();
-     void insert(int r, int c, T def);
+     void insert(int r, int c, T value);
      void remove(int r, int c);
      void print();
      T access(int r, int c);
@@ -21,3 +23,4 @@ class Vectors {
      int getNumCols();
 
 };
+#endif
