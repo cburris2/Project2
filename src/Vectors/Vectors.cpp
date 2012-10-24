@@ -109,3 +109,4 @@ int Vectors<T>::getNumCols(){
 
 template class Vectors<int>;
 template class Vectors<double>;
+template class Vectors<std::string>;

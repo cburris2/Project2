@@ -1,16 +1,19 @@
+#include "Vectors.h"
 #include <iostream>
-#include "TwoDArray.h"
+#include <string>
+
+
 
 
 int main(){
     
     //std::cout << "inside main---" << std::endl;
-    Vectors<int>* ta = new TwoDArray<int>(45,45,0);
+    Vectors<int>* ta = new Vectors<int>(45,45,0);
     //std::cout <<"\n" << "created array---" << std::endl;
     ta->print();
    // std::cout << "access is next" << std::endl;
     std::cout << ta->access(0,0) << std::endl;
-    for (int i=0; i<=44; i++) {
+   /* for (int i=0; i<=44; i++) {
 	  for (int j=44; j>=0; j--){
 
 	  
@@ -18,7 +21,7 @@ int main(){
 	  
 	  }
     }
-    //ta->insert(0,0,3); 
+    //ta->insert(0,0,3); */
     ta->print();
     ta->remove(0,0);
     ta->print();
@@ -27,12 +30,12 @@ int main(){
     std::cout << ta->getNumCols() << std::endl;
     
     
-    Vectors<std::string>* sa = new TwoDArray<std::string>(2,2,"5");
+    Vectors<std::string>* sa = new Vectors<std::string>(2,2,"5");
     sa->print();
     sa->insert(1,1,"hello");
     sa->print();
 
-    Vectors<double>* da = new TwoDArray<double>(2,2,4.5);
+    Vectors<double>* da = new Vectors<double>(2,2,4.5);
     da->print();
     da->insert(0,0,7.9);
     da->print();

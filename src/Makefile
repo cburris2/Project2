@@ -2,7 +2,7 @@ BUILD = ../build
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror
 
-all: TwoDArray Vectors SparseArray 
+all: TwoDArray Vectors  
 	  
 
 TwoDArray: TwoDArray/TwoDArray.cpp TwoDArray/TwoDArray.o
