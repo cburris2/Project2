@@ -2,13 +2,16 @@
 #define __VECTORS_H__
 
 #include <vector>
+using std::vector;
 
 template <typename T>
+
 class Vectors {
    private:
      int numRows;
      int numColumns;
-     std::vector< std::vector<T> > theVector;
+     vector< vector<T> > theVector;
+
      T defValue;
 
    public:

@@ -3,17 +3,40 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+using std::vector;
 
 template <typename T>
 Vectors<T>::Vectors(int r, int c, T def)  {
 	  numRows = r;
 	  numColumns = c;
 	  defValue = def;
-   ////int** theVector = new T*(r);
-     
-  // std::vector< std::vector<T> > theMatrix;
-	    
+    
+    	  theVector(numRows,def); 
+	  for(int i=0; i<numRows; i++){
+
+	 theVector.push_back(numColumns);	
+	  }
+
+      for (int i=0; i<=numRows-1; i++) {
+	  for (int j=numColumns-1; j>=0; j--){
+
+		theVector[i][j] = defValue;
+
+
+	  }
+
+
+
+}
+
+	  /*for(int i=0; i<numColumns; i++){
+
+		theVector[i] = new T[c];
+
+	  }*/
+
+  
+/*	    
     for(int i=0; i<r; i++) {
 	 std::vector<T> row;
 	  for(int j=0; j<c; j++){
@@ -22,18 +45,18 @@ Vectors<T>::Vectors(int r, int c, T def)  {
 		 
 	  }
        theVector.push_back(row);
-    }
+    }*/
     
 }
 
 template <typename T>
 Vectors<T>::~Vectors(){
-/*
+
     for (int i=0; i<numRows; i++){
-	  delete[] theMatrix;
+	  delete[] theVector[numRows];
 
     }
-*/
+
 }
 
 
@@ -108,5 +131,5 @@ int Vectors<T>::getNumCols(){
 
 
 template class Vectors<int>;
-template class Vectors<double>;
-template class Vectors<std::string>;
+//template class Vectors<double>;
+//template class Vectors<std::string>;

@@ -1,11 +1,9 @@
+BUILD=../../build
 CPP = g++
 CFLAGS = -Wall -Wextra -Werror
 
-main: Vectors.o 
-	  $(CPP) $(CFLAGS) -o vectors
-
-Vtest: Vectors.cpp Vectors.o
-	  $(CPP) $(CFLAGS) -o Vtest $^ 
+main: Vtest.cpp Vectors.o Vectors.cpp
+	  $(CPP) $(CFLAGS) -o $(BUILD)/vectors Vtest.cpp Vectors.o
 
 Vectors.o: Vectors.h Vectors.cpp
 	  $(CPP) $(CFLAGS) -c Vectors.cpp
