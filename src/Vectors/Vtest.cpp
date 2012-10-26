@@ -13,7 +13,7 @@ int main(){
   //  ta->insert(0,0,4);
     
 
-    ta->print();
+   // ta->print();
    // std::cout << "access is next" << std::endl;
    // std::cout << ta->access(0,0) << std::endl;
   /*   for (int i=0; i<=44; i++) {
