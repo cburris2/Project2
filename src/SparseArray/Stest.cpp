@@ -1,4 +1,4 @@
-#include "Vectors.h"
+#include "SparseArray.h"
 #include <iostream>
 #include <string>
 
@@ -8,12 +8,12 @@
 int main(){
     
     //std::cout << "inside main---" << std::endl;
-    Vectors<int>* ta = new Vectors<int>(45,45,0);
+   // Vectors<int>* ta = new Vectors<int>(45,45,0);
     //std::cout <<"\n" << "created array---" << std::endl;
   //  ta->insert(0,0,4);
     
 
-    ta->print();
+   // ta->print();
    // std::cout << "access is next" << std::endl;
    // std::cout << ta->access(0,0) << std::endl;
   /*   for (int i=0; i<=44; i++) {

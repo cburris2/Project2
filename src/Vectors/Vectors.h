@@ -10,8 +10,8 @@ class Vectors {
    private:
      int numRows;
      int numColumns;
-     vector< vector<T> > theVector;
-
+     vector< vector<T>* >* theVector;
+     
      T defValue;
 
    public:

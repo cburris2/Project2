@@ -1,28 +1,16 @@
+BUILD=../../build
 CPP = g++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = 
 
-main: Vectors.o 
-	  $(CPP) $(CFLAGS) -o vectors
+main: Stest.cpp SparseArray.o SparseArray.cpp 
+	  $(CPP) $(CFLAGS) -o $(BUILD)/sparse Stest.cpp SparseArray.o
 
-twoDtest: twoD_test.cpp TwoDArray.o
-	  $(CPP) $(CFLAGS) -o twoDtest $^ 
-
-twoD_test.o: TwoDArray.h TwoDArray.cpp TwoDArray.o
-	  	$(CPP) $(CFLAGS) -c twoD_test.cpp  
-	
-Vectors.o: Vectors.h Vectors.cpp
-	  $(CPP) $(CFLAGS) -c Vectors.cpp
-
-TwoDArray.o: TwoDArray.h TwoDArray.cpp
-	$(CPP) $(CFLAGS) -c TwoDArray.cpp
-	
-LinkedList.o: Node.o LinkedList.h LinkedList.cpp
-	$(CPP) $(CFLAGS) -c LinkedList.cpp
-
+SparseArray.o: SparseArray.h SparseArray.cpp
+	  $(CPP) $(CFLAGS) -c SparseArray.cpp
 Node.o: Node.h Node.cpp
-	$(CPP) $(CFLAGS) -c Node.cpp
+	  $(CPP) $(CFLAGS) -c Node.cpp
 
 clean:
 	rm -f *.o;
-	rm -f twoDtest;
+	rm -f Vtest;
 	rm -f *~;
