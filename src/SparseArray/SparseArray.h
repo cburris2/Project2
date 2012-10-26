@@ -9,8 +9,8 @@ class SparseArray {
   int numColumns;
   T** theArray;
   T defValue;
-  Node<T>* rows;
-  Node<T>* cols;
+  Node<T>** rows;
+  Node<T>** cols;
   
  public:
   SparseArray<T>(int r, int c, T def);

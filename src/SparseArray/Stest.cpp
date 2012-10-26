@@ -8,7 +8,7 @@
 int main(){
     
     //std::cout << "inside main---" << std::endl;
-   // Vectors<int>* ta = new Vectors<int>(45,45,0);
+   SparseArray<int>* ta = new SparseArray<int>(4,4,0);
     //std::cout <<"\n" << "created array---" << std::endl;
   //  ta->insert(0,0,4);
     

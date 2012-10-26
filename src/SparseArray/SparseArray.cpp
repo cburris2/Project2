@@ -9,10 +9,11 @@ SparseArray<T>::SparseArray(int m, int n, T def){
     defValue = def;
     rows = new Node<T>(numRows);
     cols = new Node<T>(numColumns);
-
+    
 
 
 }
+
 template <typename T>
 SparseArray<T>::~SparseArray(){
 
@@ -21,16 +22,20 @@ SparseArray<T>::~SparseArray(){
 
 template <typename T>
 void SparseArray<T>::insert(int m, int n, T value){
+   // Node<T>** currR = rows[m];
+   // Node<T>** currC = cols[n];
 
 
-
-
+    
+     
+      
+    
 }
 
 template <typename T>
 void SparseArray<T>::remove(int m, int n){
 
-
+    
 
 
 }
@@ -64,5 +69,5 @@ int SparseArray<T>::getNumCols(){
 
 }
 
-//template class SparseArray<int>;
+template class SparseArray<int>;
 //template class SparseArray<double>;
