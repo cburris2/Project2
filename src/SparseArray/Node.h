@@ -13,8 +13,8 @@ class Node {
     public:
      Node<T>(int r,int c,T v);
      T getValue();
-     Node*& getNextRow();
-     Node*& getNextCols();
+     Node<T>*& getNextRows();
+     Node<T>*& getNextCols();
      void setNextRow(Node<T>& n);
      void setNextCol(Node<T>& n);
      int getNumRows();

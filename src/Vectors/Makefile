@@ -2,7 +2,7 @@ BUILD=../../build
 CPP = g++
 CFLAGS = 
 
-main: Vtest.cpp Vectors.o Vectors.cpp
+main: Vtest.cpp Vectors.o
 	  $(CPP) $(CFLAGS) -o $(BUILD)/vectors Vtest.cpp Vectors.o
 
 Vectors.o: Vectors.h Vectors.cpp

@@ -49,12 +49,15 @@ void Node<T>::setNextCol(Node<T>& n) {
 
 }
 
+template <typename T>
 int Node<T>::getNumRows() {
 
 
     return nodeRows;
 }
 
+
+template <typename T>
 int Node<T>::getNumCols() { 
 
     return nodeCols;

@@ -1,6 +1,6 @@
 #include "SparseArray.h"
 #include <string>
-
+#include <iostream>
 
 template <typename T>
 SparseArray<T>::SparseArray(int r, int c, T def){
@@ -27,22 +27,19 @@ SparseArray<T>::SparseArray(int r, int c, T def){
 
 template <typename T>
 SparseArray<T>::~SparseArray(){
-    delete[] rows;
-    delete[] cols;
- 
-    for(int i=0; i<numRows; i++) {
+    Node<T>* cur = rows[0]; 
+    Node<T>* temp = cur;
 
-	 delete[] rows[i];
-	  
-    }
+    for(int i=0; i<numRows; i++){
+	  cur = rows[i];
+	  while(cur != 0 && cur->getNextRows() != 0){
 
-    for (int i=0; i<numColumns; i++) {
-	  
-	 delete[] cols[i];
-	  
+		cur = cur->getNextRows();
+		delete temp;
+
+	  }
 
     }
-    
 
 }
 
@@ -54,7 +51,7 @@ void SparseArray<T>::insert(int r, int c, T value){
     while(*currR != 0 && (*currR)->getNumRows()< r) {
 
 
-    	  currR=&((*currR)->getNextRow());       
+    	  currR=&((*currR)->getNextRows());       
     
     }
     while(*currC !=0  && (*currC)->getNumCols() < c) {
@@ -63,34 +60,51 @@ void SparseArray<T>::insert(int r, int c, T value){
 	  currC=&((*currC)->getNextCols());
     }
 
-    //Node<T>* temp = new Node<T>(r,c,value);
-    //temp->setNext((**currR));
+    Node<T>* temp = new Node<T>(r,c,value);
+    temp->setNextRow((**currR));
 
     *currR=temp;
 }
 
-*/
+
 
 template <typename T>
 void SparseArray<T>::remove(int r, int c){
 
+    insert(r,c,defValue);	  
     
-
 
 }
 
 template <typename T>
 void SparseArray<T>::print(){
 
+    
+	std::cout << "[";
+	std::cout << " ";
+	for (int i=0; i<=numRows-1; i++) {
+	  for(int j=numColumns-1; j>=0; j--){
 
+    		std::cout << access(i,j); 
+		std::cout << " ";
+	  }
+      }
+
+	std::cout << "]";
 }
 
 template <typename T>
 T SparseArray<T>::access(int r, int c){
+    
+    Node<T>** temp = &rows[r];
 
-
-
-
+    while(*temp != 0) {
+      if ((*temp)->getNumRows() == r && (*temp)->getNumCols() == c) {
+		return (*temp)->getValue();
+      }
+     temp = &((*temp)->getNextRows());
+    }
+    return defValue;
 
 }
 
@@ -110,5 +124,5 @@ int SparseArray<T>::getNumCols(){
 }
 
 template class SparseArray<int>;
-//template class SparseArray<double>;
-//template class SparseArray<std::string>;
+template class SparseArray<double>;
+template class SparseArray<std::string>;

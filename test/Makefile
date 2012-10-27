@@ -10,8 +10,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 
 
-unit_test: unit_test.cpp $(SRC)/TwoDArray/TwoDArray.o $(GTEST_MAINA)
-	  $(CPP) $(CFLAGS) $(GTEST_INCLUDES) -pthread -o unit_test unit_test.cpp $(SRC)/TwoDArray/TwoDArray.o $(GTEST_MAINA)
+unit_test: unit_test.cpp $(SRC)/TwoDArray/TwoDArray.o $(SRC)/Vectors/Vectors.o $(SRC)/SparseArray/SparseArray.o $(SRC)/SparseArray/Node.o $(GTEST_MAINA)
+	  $(CPP) $(CFLAGS) $(GTEST_INCLUDES) -pthread -o unit_test unit_test.cpp $(SRC)/TwoDArray/TwoDArray.o $(SRC)/Vectors/Vectors.o $(SRC)/SparseArray/SparseArray.o $(SRC)/SparseArray/Node.o $(GTEST_MAINA)
+
 
 $(GTEST_MAINA): $(GTEST)/src/*.cc $(GTEST)/src/*.h
 		cd $(GTEST)/make; make

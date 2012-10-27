@@ -150,7 +150,7 @@ TEST(TwoDArray_doublep, print){
 
     std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
 
-    std::cout <<"[ ----- inserted #8 at index 0,0 ----- ]"
+    std::cout <<"[ ----- inserted #8.8 at index 0,0 ----- ]"
     << std::endl;
     dpa->print();
     
@@ -281,15 +281,13 @@ TEST(Vectors, insert){
     
     va->insert(0,0,1);
 
-    va->insert(0,1,2);
-    va->insert(1,0,3);
 
     EXPECT_EQ(1, va->access(0,0));
 
     delete va;
 
 }
-/*
+
 
 TEST(Vectorsa, access){
     Vectors<int>* vaa = new Vectors<int>(10,10,0);
@@ -310,7 +308,6 @@ TEST(Vectorsr, remove){
     vra->insert(0,0,1);
 
     vra->remove(0,0);
-    vra->insert(1,0,3);
 
     EXPECT_EQ(0, vra->access(0,0));
 
@@ -361,21 +358,18 @@ TEST(Vectorsgc, getNumCols){
     delete vgc;
 
 }
-*/
+
 
 /* Start Vectors test for type double */
 
-/*
+
 
 TEST(Vectors_double, insert){
-    Vectors<double>* vda = new Vectors<double>(10,10,0);
+    Vectors<double>* vda = new Vectors<double>(10,10,0.1);
     
-    vda->insert(0,0,1);
+    vda->insert(0,0,1.3);
 
-    vda->insert(0,1,2);
-    vda->insert(1,0,3);
-
-    EXPECT_EQ(1, vda->access(0,0));
+    EXPECT_EQ(1.3, vda->access(0,0));
 
     delete vda;
 
@@ -383,11 +377,11 @@ TEST(Vectors_double, insert){
 
 
 TEST(Vectors_doublea, access){
-    Vectors<double>* vdaa = new Vectors<double>(10,10,0);
+    Vectors<double>* vdaa = new Vectors<double>(10,10,0.1);
     
-    vdaa->insert(0,0,5);
+    vdaa->insert(0,0,5.2);
     
-    EXPECT_EQ(5, vdaa->access(0,0));
+    EXPECT_EQ(5.2, vdaa->access(0,0));
 
     delete vdaa;
 
@@ -396,14 +390,13 @@ TEST(Vectors_doublea, access){
 
 
 TEST(Vectors_doubler, remove){
-    Vectors<double>* vdra = new Vectors<double>(10,10,0);
+    Vectors<double>* vdra = new Vectors<double>(10,10,0.1);
     
-    vdra->insert(0,0,1);
+    vdra->insert(0,0,1.1);
 
     vdra->remove(0,0);
-    vdra->insert(1,0,3);
 
-    EXPECT_EQ(0, vdra->access(0,0));
+    EXPECT_EQ(0.1, vdra->access(0,0));
 
     delete vdra;
 
@@ -418,7 +411,7 @@ TEST(Vectors_doublep, print){
 
     std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
 
-    std::cout <<"[ ----- inserted #8 at index 0,0 ----- ]"
+    std::cout <<"[ ----- inserted #8.8 at index 0,0 ----- ]"
     << std::endl;
     vdpa->print();
     
@@ -429,9 +422,9 @@ TEST(Vectors_doublep, print){
 
 
 TEST(Vectors_doubleg, getNumRows){
-    Vectors<double>* vdga = new Vectors<double>(10,10,0);
+    Vectors<double>* vdga = new Vectors<double>(10,10,0.1);
     
-    vdga->insert(0,0,2);
+    vdga->insert(0,0,2.1);
     
 
     EXPECT_EQ(10, vdga->getNumRows());
@@ -443,9 +436,9 @@ TEST(Vectors_doubleg, getNumRows){
 
 
 TEST(Vector_doublegc, getNumCols){
-    Vectors<double>* vdgc = new Vectors<double>(10,10,0);
+    Vectors<double>* vdgc = new Vectors<double>(10,10,0.1);
     
-    vdgc->insert(0,0,2);
+    vdgc->insert(0,0,2.1);
 
     EXPECT_EQ(10, vdgc->getNumCols());
 
@@ -453,16 +446,13 @@ TEST(Vector_doublegc, getNumCols){
 
 }
 
-*/
+
 /* Start Vectors test for type string */
-/*
+
 TEST(Vectors_str, insert){
     Vectors<string>* vsa = new Vectors<string>(10,10,"0");
     
     vsa->insert(0,0,"1");
-
-    vsa->insert(0,1,"2");
-    vsa->insert(1,0,"3");
 
     EXPECT_EQ("1", vsa->access(0,0));
 
@@ -502,11 +492,11 @@ TEST(Vectors_strr, remove){
 TEST(Vectors_strp, print){
     Vectors<string>* vspa = new Vectors<string>(1,1,"i love c++");
     
-    vspa->insert(0,0,"hello TwoDArray!");
+    vspa->insert(0,0,"hello Vectors TwoDArray!");
 
-    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+    std::cout << "\n[ -----Vectors TwoDArray print test ----- ]" << std::endl;
 
-    std::cout <<"[ ----- inserted hello TwoDArray at index 0,0 ----- ]"
+    std::cout <<"[ ----- inserted hello into Vector vspa at index 0,0 ----- ]"
     << std::endl;
     vspa->print();
     
@@ -541,4 +531,268 @@ TEST(Vectors_strgc, getNumCols){
 
 }
 
-*/
+
+
+/* Start TwoDArray test for type integer */
+TEST(SparseArray, insert){
+    SparseArray<int>* sta = new SparseArray<int>(1,1,0);
+    
+    sta->insert(0,0,1);
+
+
+    EXPECT_EQ(1, sta->access(0,0));
+
+    delete sta;
+
+}
+
+
+TEST(SparseArraya, access){
+    SparseArray<int>* saa = new SparseArray<int>(10,10,0);
+    
+    saa->insert(0,0,5);
+    
+    EXPECT_EQ(5, saa->access(0,0));
+
+    delete saa;
+
+}
+
+
+
+TEST(SparseArrayr, remove){
+    SparseArray<int>* sra = new SparseArray<int>(10,10,0);
+    
+    sra->insert(0,0,1);
+
+    sra->remove(0,0);
+
+    EXPECT_EQ(0, sra->access(0,0));
+
+    delete sra;
+
+}
+
+
+
+TEST(SparseArrayp, print){
+    SparseArray<int>* sspa = new SparseArray<int>(1,1,0);
+    
+    sspa->insert(0,0,8);
+
+    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+
+    std::cout <<"[ ----- inserted #8 at index 0,0 ----- ]"
+    << std::endl;
+    sspa->print();
+    
+    delete sspa;
+
+
+}
+
+
+TEST(SparseArrayg, getNumRows){
+    SparseArray<int>* sga = new SparseArray<int>(10,10,0);
+    
+    sga->insert(0,0,2);
+    
+
+    EXPECT_EQ(10, sga->getNumRows());
+
+    delete sga;
+
+
+}
+
+
+TEST(SparseArrayg, getNumCols){
+    SparseArray<int>* sgc = new SparseArray<int>(10,10,0);
+    
+    sgc->insert(0,0,2);
+
+    EXPECT_EQ(10, sgc->getNumCols());
+
+    delete sgc;
+
+}
+
+
+/* Start SparseArray test for type double */
+
+
+
+TEST(SparseArray_double, insert){
+    SparseArray<double>* sda = new SparseArray<double>(10,10,0);
+    
+    sda->insert(0,0,1);
+
+    sda->insert(0,1,2);
+    sda->insert(1,0,3);
+
+    EXPECT_EQ(1, sda->access(0,0));
+
+    delete sda;
+
+}
+
+
+TEST(SparseArray_doublea, access){
+    SparseArray<double>* sdaa = new SparseArray<double>(10,10,0);
+    
+    sdaa->insert(0,0,5);
+    
+    EXPECT_EQ(5, sdaa->access(0,0));
+
+    delete sdaa;
+
+}
+
+
+
+TEST(SparseArray_doubler, remove){
+    SparseArray<double>* sdra = new SparseArray<double>(10,10,0);
+    
+    sdra->insert(0,0,1);
+
+    sdra->remove(0,0);
+    sdra->insert(1,0,3);
+
+    EXPECT_EQ(0, sdra->access(0,0));
+
+    delete sdra;
+
+}
+
+
+
+TEST(SparseArray_doublep, print){
+    SparseArray<double>* sdpa = new SparseArray<double>(1,1,0.5);
+    
+    sdpa->insert(0,0,8.8);
+
+    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+
+    std::cout <<"[ ----- inserted #8.8 at index 0,0 ----- ]"
+    << std::endl;
+    sdpa->print();
+    
+    delete sdpa;
+
+
+}
+
+
+TEST(SparseArray_doubleg, getNumRows){
+    SparseArray<double>* sdga = new SparseArray<double>(10,10,0);
+    
+    sdga->insert(0,0,2);
+    
+
+    EXPECT_EQ(10, sdga->getNumRows());
+
+    delete sdga;
+
+
+}
+
+
+TEST(SparseArray_doublegc, getNumCols){
+    SparseArray<double>* sdgc = new SparseArray<double>(10,10,0);
+    
+    sdgc->insert(0,0,2);
+
+    EXPECT_EQ(10, sdgc->getNumCols());
+
+    delete sdgc;
+
+}
+
+
+/* Start TwoDArray test for type string */
+
+TEST(SparseArray_str, insert){
+    SparseArray<string>* ssa = new SparseArray<string>(10,10,"0");
+    
+    ssa->insert(0,0,"1");
+
+    ssa->insert(0,1,"2");
+    ssa->insert(1,0,"3");
+
+    EXPECT_EQ("1", ssa->access(0,0));
+
+    delete ssa;
+
+}
+
+
+TEST(SparseArray_stra, access){
+    SparseArray<string>* ssaa = new SparseArray<string>(10,10,"0");
+    
+    ssaa->insert(0,0,"hi");
+    
+    EXPECT_EQ("hi", ssaa->access(0,0));
+
+    delete ssaa;
+
+}
+
+
+
+TEST(SparseArray_strr, remove){
+    SparseArray<string>* ssra = new SparseArray<string>(10,10,"0");
+    
+    ssra->insert(0,0,"1");
+
+    ssra->remove(0,0);
+
+    EXPECT_EQ("0", ssra->access(0,0));
+
+    delete ssra;
+
+}
+
+
+
+TEST(SparseArray_strp, print){
+    SparseArray<string>* sspa = new SparseArray<string>(1,1,"i love c++");
+    
+    sspa->insert(0,0,"hello TwoDArray!");
+
+    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+
+    std::cout <<"[ ----- inserted hello TwoDArray at index 0,0 ----- ]"
+    << std::endl;
+    sspa->print();
+    
+    delete sspa;
+
+
+}
+
+
+TEST(SparseArray_strg, getNumRows){
+    SparseArray<string>* ssga = new SparseArray<string>(10,10,"0");
+    
+    ssga->insert(0,0,"2");
+    
+
+    EXPECT_EQ(10, ssga->getNumRows());
+
+    delete ssga;
+
+
+}
+
+
+TEST(SparseArray_strgc, getNumCols){
+    SparseArray<string>* ssgc = new SparseArray<string>(10,10,"0");
+    
+    ssgc->insert(0,0,"2");
+
+    EXPECT_EQ(10, ssgc->getNumCols());
+
+    delete ssgc;
+
+}
+
