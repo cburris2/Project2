@@ -10,7 +10,8 @@ int main(){
     //std::cout << "inside main---" << std::endl;
    SparseArray<int>* ta = new SparseArray<int>(4,4,0);
     //std::cout <<"\n" << "created array---" << std::endl;
-  //  ta->insert(0,0,4);
+   // ta->insert(0,0,4);
+    
     
 
    // ta->print();

@@ -7,6 +7,7 @@ main: Stest.cpp SparseArray.o SparseArray.cpp
 
 SparseArray.o: SparseArray.h SparseArray.cpp
 	  $(CPP) $(CFLAGS) -c SparseArray.cpp
+
 Node.o: Node.h Node.cpp
 	  $(CPP) $(CFLAGS) -c Node.cpp
 

@@ -4,7 +4,7 @@
 #include "Node.h"
 
 int main() {
-  Node<int>* i = new Node<int>(5);
+/*  Node<int>* i = new Node<int>(5);
   Node<double>* d = new Node<double>(3.156);
   Node<std::string>* s = new Node<std::string>(std::string("hello world!"));
 
@@ -23,12 +23,12 @@ int main() {
   std::cout << "[ ";
   while(curr != 0) {
     std::cout << curr->getValue();
-    curr = curr->getNext();
+    curr = curr->getNextRows();
     if (curr != 0) {
       std::cout << ", ";
     }
   }
   std::cout << " ]" << std::endl;
-
+*/
   return 0;
 }
