@@ -186,6 +186,7 @@ TEST(TwoDArray_doublegc, getNumCols){
 }
 
 
+/* Start TwoDArray test for type string */
 
 TEST(TwoDArray_str, insert){
     TwoDArray<string>* sa = new TwoDArray<string>(10,10,"0");
@@ -273,3 +274,271 @@ TEST(TwoDArray_strgc, getNumCols){
 }
 
 
+
+/* Start Vectors test for type integer */
+TEST(Vectors, insert){
+    Vectors<int>* va = new Vectors<int>(10,10,0);
+    
+    va->insert(0,0,1);
+
+    va->insert(0,1,2);
+    va->insert(1,0,3);
+
+    EXPECT_EQ(1, va->access(0,0));
+
+    delete va;
+
+}
+/*
+
+TEST(Vectorsa, access){
+    Vectors<int>* vaa = new Vectors<int>(10,10,0);
+    
+    vaa->insert(0,0,5);
+    
+    EXPECT_EQ(5, vaa->access(0,0));
+
+    delete vaa;
+
+}
+
+
+
+TEST(Vectorsr, remove){
+    Vectors<int>* vra = new Vectors<int>(10,10,0);
+    
+    vra->insert(0,0,1);
+
+    vra->remove(0,0);
+    vra->insert(1,0,3);
+
+    EXPECT_EQ(0, vra->access(0,0));
+
+    delete vra;
+
+}
+
+
+
+TEST(Vectorsp, print){
+    Vectors<int>* vpa = new Vectors<int>(1,1,0);
+    
+   vpa->insert(0,0,8);
+
+    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+
+    std::cout <<"[ ----- inserted #8 at index 0,0 ----- ]"
+    << std::endl;
+    vpa->print();
+    
+    delete vpa;
+
+
+}
+
+
+TEST(Vectorsg, getNumRows){
+    Vectors<int>* vga = new Vectors<int>(10,10,0);
+    
+    vga->insert(0,0,2);
+    
+
+    EXPECT_EQ(10, vga->getNumRows());
+
+    delete vga;
+
+
+}
+
+
+TEST(Vectorsgc, getNumCols){
+    Vectors<int>* vgc = new Vectors<int>(10,10,0);
+    
+    vgc->insert(0,0,2);
+
+    EXPECT_EQ(10, vgc->getNumCols());
+
+    delete vgc;
+
+}
+*/
+
+/* Start Vectors test for type double */
+
+/*
+
+TEST(Vectors_double, insert){
+    Vectors<double>* vda = new Vectors<double>(10,10,0);
+    
+    vda->insert(0,0,1);
+
+    vda->insert(0,1,2);
+    vda->insert(1,0,3);
+
+    EXPECT_EQ(1, vda->access(0,0));
+
+    delete vda;
+
+}
+
+
+TEST(Vectors_doublea, access){
+    Vectors<double>* vdaa = new Vectors<double>(10,10,0);
+    
+    vdaa->insert(0,0,5);
+    
+    EXPECT_EQ(5, vdaa->access(0,0));
+
+    delete vdaa;
+
+}
+
+
+
+TEST(Vectors_doubler, remove){
+    Vectors<double>* vdra = new Vectors<double>(10,10,0);
+    
+    vdra->insert(0,0,1);
+
+    vdra->remove(0,0);
+    vdra->insert(1,0,3);
+
+    EXPECT_EQ(0, vdra->access(0,0));
+
+    delete vdra;
+
+}
+
+
+
+TEST(Vectors_doublep, print){
+    Vectors<double>* vdpa = new Vectors<double>(1,1,0.5);
+    
+    vdpa->insert(0,0,8.8);
+
+    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+
+    std::cout <<"[ ----- inserted #8 at index 0,0 ----- ]"
+    << std::endl;
+    vdpa->print();
+    
+    delete vdpa;
+
+
+}
+
+
+TEST(Vectors_doubleg, getNumRows){
+    Vectors<double>* vdga = new Vectors<double>(10,10,0);
+    
+    vdga->insert(0,0,2);
+    
+
+    EXPECT_EQ(10, vdga->getNumRows());
+
+    delete vdga;
+
+
+}
+
+
+TEST(Vector_doublegc, getNumCols){
+    Vectors<double>* vdgc = new Vectors<double>(10,10,0);
+    
+    vdgc->insert(0,0,2);
+
+    EXPECT_EQ(10, vdgc->getNumCols());
+
+    delete vdgc;
+
+}
+
+*/
+/* Start Vectors test for type string */
+/*
+TEST(Vectors_str, insert){
+    Vectors<string>* vsa = new Vectors<string>(10,10,"0");
+    
+    vsa->insert(0,0,"1");
+
+    vsa->insert(0,1,"2");
+    vsa->insert(1,0,"3");
+
+    EXPECT_EQ("1", vsa->access(0,0));
+
+    delete vsa;
+
+}
+
+
+TEST(Vectors_stra, access){
+    Vectors<string>* vsaa = new Vectors<string>(10,10,"0");
+    
+    vsaa->insert(0,0,"hi");
+    
+    EXPECT_EQ("hi", vsaa->access(0,0));
+
+    delete vsaa;
+
+}
+
+
+
+TEST(Vectors_strr, remove){
+    Vectors<string>* vsra = new Vectors<string>(10,10,"0");
+    
+    vsra->insert(0,0,"1");
+
+    vsra->remove(0,0);
+
+    EXPECT_EQ("0", vsra->access(0,0));
+
+    delete vsra;
+
+}
+
+
+
+TEST(Vectors_strp, print){
+    Vectors<string>* vspa = new Vectors<string>(1,1,"i love c++");
+    
+    vspa->insert(0,0,"hello TwoDArray!");
+
+    std::cout << "\n[ -----TwoDArray print test ----- ]" << std::endl;
+
+    std::cout <<"[ ----- inserted hello TwoDArray at index 0,0 ----- ]"
+    << std::endl;
+    vspa->print();
+    
+    delete vspa;
+
+
+}
+
+
+TEST(Vectors_strg, getNumRows){
+    Vectors<string>* vsga = new Vectors<string>(10,10,"0");
+    
+    vsga->insert(0,0,"2");
+    
+
+    EXPECT_EQ(10, vsga->getNumRows());
+
+    delete vsga;
+
+
+}
+
+
+TEST(Vectors_strgc, getNumCols){
+    Vectors<string>* vsgc = new Vectors<string>(10,10,"0");
+    
+    vsgc->insert(0,0,"2");
+
+    EXPECT_EQ(10, vsgc->getNumCols());
+
+    delete vsgc;
+
+}
+
+*/
