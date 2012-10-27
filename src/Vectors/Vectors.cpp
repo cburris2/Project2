@@ -47,24 +47,11 @@ Vectors<T>::~Vectors(){
 template <typename T>
 void Vectors<T>::insert(int r, int c, T value){
 
-  assert(r >= 0 && r <= numRows-1);//assert that r is in range. 
+    assert(r >= 0 && r <= numRows-1);//assert that r is in range. 
     assert(c >= 0 && c <= numColumns-1);//assert that c is in range.
  
-   // theVector->at(r)->at(c)->push_back(value);    
-   // vector<T>* v = theVector->at(r);
 
-    //v->push_back(value); 
-
-    /*typename std::vector<T>::iterator elt = v->begin();
-    std::cout << "about to set up iterator" << std::endl;
-    for(int i = 0; i < c; ++i) {
-	  elt++;
-	  }*/
     (*theVector)[c]->insert((*theVector)[c]->begin()+c,value);
-
-
-
-    
    
 
 }
@@ -81,24 +68,24 @@ void Vectors<T>::remove(int r, int c) {
     (*theVector)[c]->insert((*theVector)[c]->begin()+c,defValue);
 
 
-// std::cout << "the vector at 0: " << theVector->at(10)->at(10) << std::endl;
 }
 
 template <typename T> 
 void Vectors<T>::print(){
 
- // typename vector<T>::iterator outter = theVector[r]->begin() ;
- // typename vector<T>::iterator inner = begin() 
-	std::cout << "[";
-	std::cout << " ";
 	for (int i=0; i<=numRows-1; i++) {
+	
+	  std::cout << "[";
+	  std::cout << " ";
 	  for(int j=numColumns-1; j>=0; j--){
 
     		std::cout << theVector->at(i)->at(j) << " "  ;
 		
 	  }
-      }
+
       std::cout << "]" << std::endl;
+
+      }
 	
 }
 

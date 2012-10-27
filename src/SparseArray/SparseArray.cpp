@@ -82,15 +82,19 @@ void SparseArray<T>::print(){
     
 	std::cout << "[";
 	std::cout << " ";
-	for (int i=0; i<=numRows-1; i++) {
+      for (int i=0; i<=numRows-1; i++) {
+	  std::cout << "[";
+	  std::cout << " ";
 	  for(int j=numColumns-1; j>=0; j--){
 
     		std::cout << access(i,j); 
 		std::cout << " ";
 	  }
+
+	  std::cout << "]";
+ 
       }
 
-	std::cout << "]";
 }
 
 template <typename T>

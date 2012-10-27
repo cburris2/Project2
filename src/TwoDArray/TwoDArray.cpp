@@ -47,16 +47,11 @@ TwoDArray<T>::~TwoDArray() {
 
 template <typename T> 
 void TwoDArray<T>::insert(int r, int c, T value){
-      //T* inValue=value; 
-      //(*inValue)=value;
       assert(r >= 0 && r <= numRows-1);//assert that r is in range. 
 	assert(c >= 0 && c <= numColumns-1);//assert that c is in range.
        
-	//inValue->theArray[r][c];
-     // std::cout << theArray.print() <<std::endl;	
       theArray[r][c]=value;	
 		
-      //std::cout << "after insert---" <<std::endl;	
 
 } 
 
@@ -66,29 +61,28 @@ void TwoDArray<T>::remove(int r, int c){
 
 	
       assert(r >= 0 && r <= numRows-1);
-	  /* <remove needs to replace the value at the r & c> */
       assert(c >= 0 && c <= numColumns-1);
 	
-     // for (int i=0; i<=numRows-1; i++) {
 	  theArray[r][c] = defValue; 
-      //}
 
 }
 
 
 template <typename T>
 void TwoDArray<T>::print() {
-      //int cur = 0;
-	std::cout << "[";
-	std::cout << " ";
+    	
 	for (int i=0; i<=numRows-1; i++) {
+        std::cout << "[";
+	  std::cout << " ";
 	  for(int j=numColumns-1; j>=0; j--){
 
     		std::cout << theArray[i][j]; 
 		std::cout << " ";
 	  }
+
+          std::cout << "]" << std::endl;
+
       }
-      std::cout << "]" << std::endl;
 }
 
 template <typename T>
